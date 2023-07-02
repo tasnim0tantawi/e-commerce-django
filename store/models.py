@@ -21,6 +21,9 @@ class Category(models.Model):
         # For example: 'Electronics'
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('list-category', args=[self.slug])
+
 
 class Product(models.Model):
     # FK
