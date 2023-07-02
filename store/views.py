@@ -29,4 +29,4 @@ def product_info(request, slug):
     context = {
         'product': product,
     }
-    return render(request, 'store/product_info.html', context=context)
+    return render(request, 'store/product-info.html', context=context)

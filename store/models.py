@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 
@@ -42,6 +42,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        # reverse() function is used to return the url as a string
+        # product-info is the name of the url in urls.py
+        # args is a list of arguments that will be passed to the url (in this case, the slug)
+        return reverse('product-info', args=[self.slug])
 
 
 
