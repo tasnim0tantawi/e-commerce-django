@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'store.views.categories',  # to make the categories available in all templates and views of the project
+                'cart.context_processors.cart',  # to make the cart available in all templates and views of the project
             ],
         },
     },
