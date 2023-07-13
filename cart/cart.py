@@ -10,4 +10,17 @@ class Cart():
         # The cart will be empty if the user is new, and it will be filled with products if the user is returning
         self.cart = cart
 
+    def add(self, product, quantity):
+        product_id = str(product.id)
+        if product_id in self.cart:
+            self.cart[product_id]['quantity'] = quantity
+        else:
+            self.cart[product_id] = {
+                'price': str(product.price),
+                'quantity': quantity
+            }
+
+        self.session.modified = True
+
+
 
